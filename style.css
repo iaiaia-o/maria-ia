@@ -111,7 +111,7 @@ body {
 }
 
 .hero-title {
-    font-size: var(--font-size-4xl);
+    font-size: var(--font-size-3xl);
     font-weight: 500;
     margin-bottom: var(--spacing-md);
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
