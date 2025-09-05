@@ -1,0 +1,553 @@
+# 2. CSS - style.css
+css_content = '''/* Fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+/* Variables CSS */
+:root {
+    /* Colores vibrantes */
+    --color-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --color-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    --color-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    --color-success: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+    --color-warning: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    
+    /* Colores base */
+    --color-white: #ffffff;
+    --color-light: #f8fafc;
+    --color-gray-100: #f1f5f9;
+    --color-gray-200: #e2e8f0;
+    --color-gray-300: #cbd5e1;
+    --color-gray-600: #475569;
+    --color-gray-800: #1e293b;
+    --color-dark: #0f172a;
+    
+    /* Tipografía */
+    --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    
+    /* Espaciado */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    
+    /* Bordes */
+    --border-radius-sm: 0.375rem;
+    --border-radius-md: 0.5rem;
+    --border-radius-lg: 0.75rem;
+    --border-radius-xl: 1rem;
+    
+    /* Sombras */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    
+    /* Transiciones */
+    --transition-fast: 150ms ease-in-out;
+    --transition-normal: 300ms ease-in-out;
+    --transition-slow: 500ms ease-in-out;
+}
+
+/* Reset y base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--color-gray-800);
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    min-height: 100vh;
+}
+
+/* Layout */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Header/Hero */
+.hero {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
+    color: var(--color-white);
+    padding: var(--spacing-3xl) 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>');
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: var(--font-size-4xl);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    font-size: var(--font-size-xl);
+    font-weight: 400;
+    margin-bottom: var(--spacing-2xl);
+    opacity: 0.9;
+}
+
+/* Barra de progreso */
+.progress-indicator {
+    max-width: 400px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    padding: 4px;
+    backdrop-filter: blur(10px);
+}
+
+.progress-bar {
+    height: 8px;
+    background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+    border-radius: 50px;
+    width: 0%;
+    transition: width var(--transition-normal);
+    box-shadow: 0 2px 10px rgba(67, 233, 123, 0.4);
+}
+
+/* Contenido principal */
+.main-content {
+    padding: var(--spacing-3xl) 0;
+    background: var(--color-light);
+    min-height: 100vh;
+}
+
+/* Sección intro */
+.intro-section {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.intro-card {
+    background: var(--color-white);
+    padding: var(--spacing-2xl);
+    border-radius: var(--border-radius-xl);
+    box-shadow: var(--shadow-lg);
+    text-align: center;
+    border: 2px solid transparent;
+    background: linear-gradient(white, white) padding-box,
+                linear-gradient(135deg, #667eea, #764ba2) border-box;
+}
+
+.intro-title {
+    font-size: var(--font-size-2xl);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.intro-text {
+    font-size: var(--font-size-lg);
+    color: var(--color-gray-600);
+    line-height: 1.7;
+}
+
+/* Sección de pasos */
+.steps-section {
+    margin-bottom: var(--spacing-3xl);
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-xl);
+}
+
+/* Tarjetas de pasos */
+.step-card {
+    background: var(--color-white);
+    border-radius: var(--border-radius-xl);
+    padding: var(--spacing-xl);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-normal);
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.step-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--color-primary);
+    transition: all var(--transition-normal);
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.step-card.completed {
+    border-color: #43e97b;
+    background: linear-gradient(135deg, rgba(67, 233, 123, 0.05) 0%, rgba(56, 249, 215, 0.05) 100%);
+}
+
+.step-card.completed::before {
+    background: var(--color-success);
+}
+
+/* Header de paso */
+.step-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.step-number {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: var(--font-size-lg);
+}
+
+.step-status {
+    padding: var(--spacing-xs) var(--spacing-md);
+    border-radius: var(--border-radius-lg);
+    font-size: var(--font-size-sm);
+    font-weight: 500;
+}
+
+.status-free {
+    background: var(--color-success);
+    color: var(--color-white);
+}
+
+.status-paid {
+    background: var(--color-warning);
+    color: var(--color-white);
+}
+
+.status-practice {
+    background: var(--color-accent);
+    color: var(--color-white);
+}
+
+.status-advanced {
+    background: var(--color-secondary);
+    color: var(--color-white);
+}
+
+/* Contenido del paso */
+.step-title {
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-gray-800);
+}
+
+.step-description {
+    font-size: var(--font-size-base);
+    color: var(--color-gray-600);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.6;
+}
+
+.step-benefits {
+    margin-bottom: var(--spacing-lg);
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+}
+
+.benefits-list li {
+    padding: var(--spacing-sm) 0;
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-sm);
+}
+
+.step-note,
+.step-instructor {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--color-gray-100);
+    border-radius: var(--border-radius-md);
+    border-left: 4px solid #667eea;
+}
+
+.step-tips {
+    background: rgba(245, 158, 11, 0.1);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-lg);
+    border-left: 4px solid #f59e0b;
+}
+
+.step-tips h4 {
+    font-size: var(--font-size-base);
+    margin-bottom: var(--spacing-md);
+    color: var(--color-gray-800);
+}
+
+.step-tips ul {
+    list-style: none;
+    padding: 0;
+}
+
+.step-tips li {
+    padding: var(--spacing-xs) 0;
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+}
+
+.step-warning {
+    background: rgba(239, 68, 68, 0.1);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-lg);
+    border-left: 4px solid #ef4444;
+}
+
+.step-warning p {
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+}
+
+.step-credentials {
+    background: rgba(99, 102, 241, 0.1);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    margin-bottom: var(--spacing-lg);
+    border-left: 4px solid #6366f1;
+}
+
+.step-credentials p {
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--font-size-sm);
+    color: var(--color-gray-600);
+}
+
+/* Acciones del paso */
+.step-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.action-btn {
+    padding: var(--spacing-md) var(--spacing-lg);
+    border-radius: var(--border-radius-md);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: var(--font-size-base);
+    transition: all var(--transition-normal);
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    flex: 1;
+    justify-content: center;
+    min-width: 150px;
+}
+
+.action-btn.primary {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+.action-btn.secondary {
+    background: var(--color-gray-200);
+    color: var(--color-gray-800);
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.complete-btn {
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: var(--color-gray-200);
+    color: var(--color-gray-800);
+    border: none;
+    border-radius: var(--border-radius-md);
+    font-weight: 500;
+    font-size: var(--font-size-base);
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    flex: 1;
+    min-width: 150px;
+}
+
+.complete-btn:hover {
+    background: var(--color-gray-300);
+    transform: translateY(-2px);
+}
+
+.complete-btn.completed {
+    background: var(--color-success);
+    color: var(--color-white);
+}
+
+.complete-btn.completed:hover {
+    background: linear-gradient(135deg, #3dd68c 0%, #2dd4bf 100%);
+}
+
+/* Footer */
+.footer {
+    background: var(--color-gray-800);
+    color: var(--color-white);
+    text-align: center;
+    padding: var(--spacing-xl) 0;
+}
+
+.footer-text {
+    font-size: var(--font-size-base);
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .hero-subtitle {
+        font-size: var(--font-size-lg);
+    }
+    
+    .steps-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .step-actions {
+        flex-direction: column;
+    }
+    
+    .action-btn,
+    .complete-btn {
+        width: 100%;
+    }
+    
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+}
+
+/* Animaciones */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}
+
+.step-card {
+    animation: fadeInUp var(--transition-slow) ease-out;
+}
+
+.step-card.completed .step-number {
+    animation: pulse 1s ease-in-out;
+}
+
+/* Efectos especiales */
+.celebration-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.celebration-effect::after {
+    content: '🎉';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
+    animation: celebration 1s ease-out;
+    pointer-events: none;
+}
+
+@keyframes celebration {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(1);
+    }
+}'''
+
+# Crear archivo CSS
+with open('style.css', 'w', encoding='utf-8') as f:
+    f.write(css_content)
+
+print("✅ Archivo style.css creado")
