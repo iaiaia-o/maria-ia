@@ -1,546 +1,546 @@
-/* Fuentes */
+/*Fuentes*/
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
-/* Variables CSS */
-:root {
-    /* Colores vibrantes */
-    --color-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --color-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-    --color-accent: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-    --color-success: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-    --color-warning: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+/*Variables CSS*/
+:raíz {
+    /*Colores vibrantes*/
+    --color-primario: gradiente-lineal(135deg, #667eea 0%, #764ba2 100%);
+    --color-secundario: gradiente-lineal(135deg, #f093fb 0%, #f5576c 100%);
+    --color-accent: gradiente lineal (135 grados, #4facfe 0%, #00f2fe 100%);
+    --color-success: gradiente-lineal(135deg, #43e97b 0%, #38f9d7 100%);
+    --color-warning: gradiente lineal(135deg, #fa709a 0%, #fee140 100%);
 
-    /* Colores base */
-    --color-white: #ffffff;
-    --color-light: #f8fafc;
-    --color-gray-100: #f1f5f9;
-    --color-gray-200: #e2e8f0;
-    --color-gray-300: #cbd5e1;
-    --color-gray-600: #475569;
-    --color-gray-800: #1e293b;
-    --color-dark: #0f172a;
+    /*Colores base*/
+    --color-blanco: #ffffff;
+    --color-luz: #f8fafc;
+    --color-gris-100: #f1f5f9;
+    --color-gris-200: #e2e8f0;
+    --color-gris-300: #cbd5e1;
+    --color-gris-600: #475569;
+    --color-gris-800: #1e293b;
+    --color-oscuro: #0f172a;
 
     /* Tipografía */
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     --font-size-xs: 0.75rem;
     --font-size-sm: 0.875rem;
     --font-size-base: 1rem;
-    --font-size-lg: 1.125rem;
-    --font-size-xl: 1.25rem;
-    --font-size-2xl: 1.5rem;
-    --font-size-3xl: 1.875rem;
-    --font-size-4xl: 2.25rem;
+    --tamaño de fuente-lg: 1.125rem;
+    --tamaño-de-fuente-xl: 1.25rem;
+    --tamaño de fuente-2xl: 1.5rem;
+    --tamaño de fuente 3xl: 1.875rem;
+    --tamaño de fuente-4xl: 2.25rem;
 
-    /* Espaciado */
-    --spacing-xs: 0.25rem;
-    --spacing-sm: 0.5rem;
-    --spacing-md: 1rem;
-    --spacing-lg: 1.5rem;
-    --spacing-xl: 2rem;
-    --spacing-2xl: 3rem;
-    --spacing-3xl: 4rem;
+    /*Espaciado*/
+    --espaciado-xs: 0,25rem;
+    --espaciado-sm: 0.5rem;
+    --espaciado-md: 1rem;
+    --espaciado-lg: 1.5rem;
+    --espaciado-xl: 2rem;
+    --espaciado-2xl: 3rem;
+    --espaciado-3xl: 4rem;
 
     /* Bordes */
-    --border-radius-sm: 0.375rem;
-    --border-radius-md: 0.5rem;
-    --border-radius-lg: 0.75rem;
-    --border-radius-xl: 1rem;
+    --radio-border-sm: 0,375rem;
+    --radio-border-md: 0.5rem;
+    --radio-del-borde-lg: 0,75rem;
+    --radio-fronterizo-xl: 1rem;
 
-    /* Sombras */
+    /*Sombras*/
     --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
     --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 
     /* Transiciones */
-    --transition-fast: 150ms ease-in-out;
-    --transition-normal: 300ms ease-in-out;
-    --transition-slow: 500ms ease-in-out;
+    --transición-rápida: entrada y salida gradual de 150 ms;
+    --transición-normal: 300ms de entrada y salida suave;
+    --transición-lenta: 500ms de entrada y salida gradual;
 }
 
-/* Reset y base */
+/*Restablecer la base y*/
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    margen: 0;
+    relleno: 0;
+    tamaño de caja: caja de borde;
 }
 
 html {
-    scroll-behavior: smooth;
+    comportamiento de desplazamiento: suave;
 }
 
-body {
-    font-family: var(--font-family);
-    line-height: 1.6;
-    color: var(--color-gray-800);
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-    min-height: 100vh;
+cuerpo {
+    familia-de-fuentes: var(--familia-de-fuentes);
+    altura de línea: 1.6;
+    color: var(--color-gris-800);
+    fondo: gradiente lineal (135 grados, #667eea 0%, #764ba2 50%, #f093fb 100%);
+    altura mínima: 100vh;
 }
 
-/* Layout */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 var(--spacing-md);
+/* Disposición */
+.contenedor {
+    ancho máximo: 1200px;
+    margen: 0 auto;
+    relleno: 0 var(--spacing-md);
 }
 
-/* Header/Hero */
-.hero {
-    background: linear-gradient(135deg, rgba(102, 126, 234, 0.9) 0%, rgba(118, 75, 162, 0.9) 100%);
-    color: var(--color-white);
-    padding: var(--spacing-3xl) 0;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+/* Encabezado/Héroe */
+.héroe {
+    fondo: gradiente lineal (135 grados, rgba (102, 126, 234, 0.9) 0%, rgba (118, 75, 162, 0.9) 100%);
+    color: var(--color-blanco);
+    relleno: var(--spacing-3xl) 0;
+    alinear texto: centro;
+    posición: relativa;
+    desbordamiento: oculto;
 }
 
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100%" height="100%" fill="url(%23grain)"/></svg>');
-    pointer-events: none;
+.hero::antes {
+    contenido: '';
+    posición: absoluta;
+    arriba: 0;
+    izquierda: 0;
+    derecha: 0;
+    abajo: 0;
+    fondo: url('datos:imagen/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><patrón id="grano" ancho="100" alto="100" unidadespatrón="userSpaceOnUse"><círculo cx="50" cy="50" r="1" relleno="blanco" opacidad="0.1"/></patrón></defs><rect ancho="100%" alto="100%" relleno="url(%23grain)"/></svg>');
+    eventos de puntero: ninguno;
 }
 
 .hero-content {
-    position: relative;
-    z-index: 1;
+    posición: relativa;
+    índice z: 1;
 }
 
-.hero-title {
-    font-size: var(--font-size-2xl);
-    font-weight: 400;
-    margin-bottom: var(--spacing-md);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+.título-de-héroe {
+    tamaño de fuente: var(--font-size-4xl);
+    peso de la fuente: 600;
+    margen inferior: var(--espaciado-md);
+    sombra de texto: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle {
-    font-size: var(--font-size-xl);
-    font-weight: 400;
-    margin-bottom: var(--spacing-2xl);
-    opacity: 0.9;
+    tamaño de fuente: var(--font-size-xl);
+    peso de la fuente: 400;
+    margen inferior: var(--spacing-2xl);
+    opacidad: 0,9;
 }
 
-/* Barra de progreso */
-.progress-indicator {
-    max-width: 400px;
-    margin: 0 auto;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50px;
-    padding: 4px;
-    backdrop-filter: blur(10px);
+/*Barra de progreso*/
+.indicador de progreso {
+    ancho máximo: 400px;
+    margen: 0 auto;
+    fondo: rgba(255, 255, 255, 0.2);
+    radio del borde: 50px;
+    relleno: 4px;
+    filtro de fondo: desenfoque(10px);
 }
 
-.progress-bar {
-    height: 8px;
-    background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
-    border-radius: 50px;
-    width: 0%;
-    transition: width var(--transition-normal);
-    box-shadow: 0 2px 10px rgba(67, 233, 123, 0.4);
+.barra de progreso {
+    altura: 8px;
+    fondo: gradiente lineal (90 grados, #43e97b 0%, #38f9d7 100%);
+    radio del borde: 50px;
+    ancho: 0%;
+    transición: ancho var(--transition-normal);
+    caja-sombra: 0 2px 10px rgba(67, 233, 123, 0.4);
 }
 
 /* Contenido principal */
-.main-content {
-    padding: var(--spacing-3xl) 0;
-    background: var(--color-light);
-    min-height: 100vh;
+.contenido principal {
+    relleno: var(--spacing-3xl) 0;
+    fondo: var(--color-luz);
+    altura mínima: 100vh;
 }
 
-/* Sección intro */
-.intro-section {
-    margin-bottom: var(--spacing-3xl);
+/*Sección intro*/
+.sección de introducción {
+    margen inferior: var(--espaciado-3xl);
 }
 
-.intro-card {
-    background: var(--color-white);
-    padding: var(--spacing-2xl);
-    border-radius: var(--border-radius-xl);
-    box-shadow: var(--shadow-lg);
-    text-align: center;
-    border: 2px solid transparent;
-    background: linear-gradient(white, white) padding-box,
-                linear-gradient(135deg, #667eea, #764ba2) border-box;
+.tarjeta de introducción {
+    fondo: var(--color-blanco);
+    relleno: var(--spacing-2xl);
+    radio-borde: var(--radio-borde-xl);
+    caja-sombra: var(--shadow-lg);
+    alinear texto: centro;
+    borde: 2px sólido transparente;
+    fondo: gradiente lineal (blanco, blanco) cuadro de relleno,
+                gradiente lineal (135 grados, #667eea, #764ba2) cuadro de borde;
 }
 
-.intro-title {
-    font-size: var(--font-size-2xl);
-    font-weight: 600;
-    margin-bottom: var(--spacing-md);
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+.intro-título {
+    tamaño de fuente: var(--font-size-2xl);
+    peso de la fuente: 600;
+    margen inferior: var(--espaciado-md);
+    fondo: gradiente lineal (135 grados, #667eea, #764ba2);
+    -webkit-background-clip: texto;
+    -webkit-text-fill-color: transparente;
+    clip de fondo: texto;
 }
 
-.intro-text {
-    font-size: var(--font-size-lg);
-    color: var(--color-gray-600);
-    line-height: 1.7;
+.texto de introducción {
+    tamaño de fuente: var(--font-size-lg);
+    color: var(--color-gris-600);
+    altura de línea: 1,7;
 }
 
 /* Sección de pasos */
-.steps-section {
-    margin-bottom: var(--spacing-3xl);
+.sección-de-pasos {
+    margen inferior: var(--espaciado-3xl);
 }
 
-.steps-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: var(--spacing-xl);
+.pasos-cuadrícula {
+    pantalla: cuadrícula;
+    columnas-de-plantilla-de-cuadrícula: repeat(auto-fit, minmax(350px, 1fr));
+    espacio: var(--espaciado-xl);
 }
 
-/* Tarjetas de pasos */
-.step-card {
-    background: var(--color-white);
-    border-radius: var(--border-radius-xl);
-    padding: var(--spacing-xl);
-    box-shadow: var(--shadow-md);
-    transition: all var(--transition-normal);
-    border: 2px solid transparent;
-    position: relative;
-    overflow: hidden;
+/*Tarjetas de pasos*/
+.tarjeta-de-paso {
+    fondo: var(--color-blanco);
+    radio-borde: var(--radio-borde-xl);
+    relleno: var(--spacing-xl);
+    caja-sombra: var(--shadow-md);
+    transición: todo var(--transición-normal);
+    borde: 2px sólido transparente;
+    posición: relativa;
+    desbordamiento: oculto;
 }
 
-.step-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: var(--color-primary);
-    transition: all var(--transition-normal);
+.step-card::antes {
+    contenido: '';
+    posición: absoluta;
+    arriba: 0;
+    izquierda: 0;
+    derecha: 0;
+    altura: 4px;
+    fondo: var(--color-primary);
+    transición: todo var(--transición-normal);
 }
 
 .step-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-xl);
+    transformar: translateY(-5px);
+    caja-sombra: var(--sombra-xl);
 }
 
-.step-card.completed {
-    border-color: #43e97b;
-    background: linear-gradient(135deg, rgba(67, 233, 123, 0.05) 0%, rgba(56, 249, 215, 0.05) 100%);
+.step-card.completado {
+    color del borde: #43e97b;
+    fondo: gradiente lineal (135 grados, rgba (67, 233, 123, 0.05) 0%, rgba (56, 249, 215, 0.05) 100%);
 }
 
-.step-card.completed::before {
-    background: var(--color-success);
+.step-card.completado::antes {
+    fondo: var(--color-success);
 }
 
-/* Header de paso */
+/* Encabezado de paso */
 .step-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: var(--spacing-lg);
+    pantalla:flexible;
+    justificar-contenido: espacio-entre;
+    alinear-elementos: centro;
+    margen inferior: var(--spacing-lg);
 }
 
-.step-number {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--color-primary);
-    color: var(--color-white);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 600;
-    font-size: var(--font-size-lg);
+.número-de-paso {
+    ancho: 40px;
+    altura: 40px;
+    radio del borde: 50%;
+    fondo: var(--color-primary);
+    color: var(--color-blanco);
+    pantalla:flexible;
+    alinear-elementos: centro;
+    justificar-contenido: centro;
+    peso de la fuente: 600;
+    tamaño de fuente: var(--font-size-lg);
 }
 
-.step-status {
-    padding: var(--spacing-xs) var(--spacing-md);
-    border-radius: var(--border-radius-lg);
-    font-size: var(--font-size-sm);
-    font-weight: 500;
+.estado-de-paso {
+    relleno: var(--espaciado-xs) var(--espaciado-md);
+    radio-borde: var(--radio-borde-lg);
+    tamaño de fuente: var(--font-size-sm);
+    peso de la fuente: 500;
 }
 
-.status-free {
-    background: var(--color-success);
-    color: var(--color-white);
+.libre de estado {
+    fondo: var(--color-success);
+    color: var(--color-blanco);
 }
 
-.status-paid {
-    background: var(--color-warning);
-    color: var(--color-white);
+.estado-pagado {
+    fondo: var(--color-warning);
+    color: var(--color-blanco);
 }
 
 .status-practice {
-    background: var(--color-accent);
-    color: var(--color-white);
+    fondo: var(--color-accent);
+    color: var(--color-blanco);
 }
 
-.status-advanced {
-    background: var(--color-secondary);
-    color: var(--color-white);
+.estado-avanzado {
+    fondo: var(--color-secundario);
+    color: var(--color-blanco);
 }
 
 /* Contenido del paso */
-.step-title {
-    font-size: var(--font-size-xl);
-    font-weight: 600;
-    margin-bottom: var(--spacing-md);
-    color: var(--color-gray-800);
+.título-del-paso {
+    tamaño de fuente: var(--font-size-xl);
+    peso de la fuente: 600;
+    margen inferior: var(--espaciado-md);
+    color: var(--color-gris-800);
 }
 
-.step-description {
-    font-size: var(--font-size-base);
-    color: var(--color-gray-600);
-    margin-bottom: var(--spacing-lg);
-    line-height: 1.6;
+.descripción-del-paso {
+    tamaño de fuente: var(--font-size-base);
+    color: var(--color-gris-600);
+    margen inferior: var(--spacing-lg);
+    altura de línea: 1.6;
 }
 
-.step-benefits {
-    margin-bottom: var(--spacing-lg);
+.step-beneficios {
+    margen inferior: var(--spacing-lg);
 }
 
-.benefits-list {
-    list-style: none;
-    padding: 0;
+.lista-de-beneficios {
+    estilo de lista: ninguno;
+    relleno: 0;
 }
 
-.benefits-list li {
-    padding: var(--spacing-sm) 0;
-    font-size: var(--font-size-sm);
-    color: var(--color-gray-600);
-    display: flex;
-    align-items: flex-start;
-    gap: var(--spacing-sm);
+.lista de beneficios li {
+    relleno: var(--spacing-sm) 0;
+    tamaño de fuente: var(--font-size-sm);
+    color: var(--color-gris-600);
+    pantalla:flexible;
+    alinear-elementos: flex-start;
+    espacio: var(--spacing-sm);
 }
 
-.step-note,
-.step-instructor {
-    font-size: var(--font-size-sm);
-    color: var(--color-gray-600);
-    margin-bottom: var(--spacing-md);
-    padding: var(--spacing-md);
-    background: var(--color-gray-100);
-    border-radius: var(--border-radius-md);
-    border-left: 4px solid #667eea;
+.nota de paso,
+.instructor de pasos {
+    tamaño de fuente: var(--font-size-sm);
+    color: var(--color-gris-600);
+    margen inferior: var(--espaciado-md);
+    relleno: var(--spacing-md);
+    fondo: var(--color-gris-100);
+    radio-borde: var(--radio-borde-md);
+    borde izquierdo: 4px sólido #667eea;
 }
 
-.step-tips {
-    background: rgba(245, 158, 11, 0.1);
-    padding: var(--spacing-lg);
-    border-radius: var(--border-radius-md);
-    margin-bottom: var(--spacing-lg);
-    border-left: 4px solid #f59e0b;
+.consejos paso a paso {
+    fondo: rgba(245, 158, 11, 0.1);
+    relleno: var(--spacing-lg);
+    radio-borde: var(--radio-borde-md);
+    margen inferior: var(--spacing-lg);
+    borde izquierdo: 4px sólido #f59e0b;
 }
 
-.step-tips h4 {
-    font-size: var(--font-size-base);
-    margin-bottom: var(--spacing-md);
-    color: var(--color-gray-800);
+.paso-consejos h4 {
+    tamaño de fuente: var(--font-size-base);
+    margen inferior: var(--espaciado-md);
+    color: var(--color-gris-800);
 }
 
 .step-tips ul {
-    list-style: none;
-    padding: 0;
+    estilo de lista: ninguno;
+    relleno: 0;
 }
 
-.step-tips li {
-    padding: var(--spacing-xs) 0;
-    font-size: var(--font-size-sm);
-    color: var(--color-gray-600);
+.paso-consejos li {
+    relleno: var(--spacing-xs) 0;
+    tamaño de fuente: var(--font-size-sm);
+    color: var(--color-gris-600);
 }
 
-.step-warning {
-    background: rgba(239, 68, 68, 0.1);
-    padding: var(--spacing-lg);
-    border-radius: var(--border-radius-md);
-    margin-bottom: var(--spacing-lg);
-    border-left: 4px solid #ef4444;
+.advertencia de paso {
+    fondo: rgba(239, 68, 68, 0.1);
+    relleno: var(--spacing-lg);
+    radio-borde: var(--radio-borde-md);
+    margen inferior: var(--spacing-lg);
+    borde izquierdo: 4px sólido #ef4444;
 }
 
-.step-warning p {
-    margin-bottom: var(--spacing-sm);
-    font-size: var(--font-size-sm);
-    color: var(--color-gray-600);
+.advertencia de paso p {
+    margen inferior: var(--spacing-sm);
+    tamaño de fuente: var(--font-size-sm);
+    color: var(--color-gris-600);
 }
 
-.step-credentials {
-    background: rgba(99, 102, 241, 0.1);
-    padding: var(--spacing-lg);
-    border-radius: var(--border-radius-md);
-    margin-bottom: var(--spacing-lg);
-    border-left: 4px solid #6366f1;
+.credenciales de paso {
+    fondo: rgba(99, 102, 241, 0.1);
+    relleno: var(--spacing-lg);
+    radio-borde: var(--radio-borde-md);
+    margen inferior: var(--spacing-lg);
+    borde izquierdo: 4px sólido #6366f1;
 }
 
-.step-credentials p {
-    margin-bottom: var(--spacing-xs);
-    font-size: var(--font-size-sm);
-    color: var(--color-gray-600);
+.credenciales de paso p {
+    margen inferior: var(--espaciado-xs);
+    tamaño de fuente: var(--font-size-sm);
+    color: var(--color-gris-600);
 }
 
 /* Acciones del paso */
-.step-actions {
-    display: flex;
-    gap: var(--spacing-md);
-    flex-wrap: wrap;
+.acciones-de-paso {
+    pantalla:flexible;
+    espacio: var(--spacing-md);
+    flex-wrap: envolver;
 }
 
-.action-btn {
-    padding: var(--spacing-md) var(--spacing-lg);
-    border-radius: var(--border-radius-md);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: var(--font-size-base);
-    transition: all var(--transition-normal);
-    border: none;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-    flex: 1;
-    justify-content: center;
-    min-width: 150px;
+.acción-btn {
+    relleno: var(--spacing-md) var(--spacing-lg);
+    radio-borde: var(--radio-borde-md);
+    decoración de texto: ninguna;
+    peso de la fuente: 500;
+    tamaño de fuente: var(--font-size-base);
+    transición: todo var(--transición-normal);
+    borde: ninguno;
+    cursor: puntero;
+    pantalla: inline-flex;
+    alinear-elementos: centro;
+    espacio: var(--spacing-sm);
+    flexión: 1;
+    justificar-contenido: centro;
+    ancho mínimo: 150px;
 }
 
-.action-btn.primary {
-    background: var(--color-primary);
-    color: var(--color-white);
+.acción-btn.primaria {
+    fondo: var(--color-primary);
+    color: var(--color-blanco);
 }
 
-.action-btn.secondary {
-    background: var(--color-gray-200);
-    color: var(--color-gray-800);
+.acción-btn.secundario {
+    fondo: var(--color-gris-200);
+    color: var(--color-gris-800);
 }
 
-.action-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-lg);
+.acción-btn:hover {
+    transformar: translateY(-2px);
+    caja-sombra: var(--shadow-lg);
 }
 
 .complete-btn {
-    padding: var(--spacing-md) var(--spacing-lg);
-    background: var(--color-gray-200);
-    color: var(--color-gray-800);
-    border: none;
-    border-radius: var(--border-radius-md);
-    font-weight: 500;
-    font-size: var(--font-size-base);
-    cursor: pointer;
-    transition: all var(--transition-normal);
-    flex: 1;
-    min-width: 150px;
+    relleno: var(--spacing-md) var(--spacing-lg);
+    fondo: var(--color-gris-200);
+    color: var(--color-gris-800);
+    borde: ninguno;
+    radio-borde: var(--radio-borde-md);
+    peso de la fuente: 500;
+    tamaño de fuente: var(--font-size-base);
+    cursor: puntero;
+    transición: todo var(--transición-normal);
+    flexión: 1;
+    ancho mínimo: 150px;
 }
 
 .complete-btn:hover {
-    background: var(--color-gray-300);
-    transform: translateY(-2px);
+    fondo: var(--color-gris-300);
+    transformar: translateY(-2px);
 }
 
-.complete-btn.completed {
-    background: var(--color-success);
-    color: var(--color-white);
+.complete-btn.completado {
+    fondo: var(--color-success);
+    color: var(--color-blanco);
 }
 
-.complete-btn.completed:hover {
-    background: linear-gradient(135deg, #3dd68c 0%, #2dd4bf 100%);
+.complete-btn.completado:hover {
+    fondo: gradiente lineal (135 grados, #3dd68c 0%, #2dd4bf 100%);
 }
 
-/* Footer */
-.footer {
-    background: var(--color-gray-800);
-    color: var(--color-white);
-    text-align: center;
-    padding: var(--spacing-xl) 0;
+/* Pie de página */
+.pie de página {
+    fondo: var(--color-gris-800);
+    color: var(--color-blanco);
+    alinear texto: centro;
+    relleno: var(--spacing-xl) 0;
 }
 
-.footer-text {
-    font-size: var(--font-size-base);
-    opacity: 0.8;
+.texto de pie de página {
+    tamaño de fuente: var(--font-size-base);
+    opacidad: 0,8;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .hero-title {
-        font-size: var(--font-size-3xl);
+/*Responsivo*/
+@media (ancho máximo: 768px) {
+    .título-de-héroe {
+        tamaño de fuente: var(--font-size-3xl);
     }
 
     .hero-subtitle {
-        font-size: var(--font-size-lg);
+        tamaño de fuente: var(--font-size-lg);
     }
 
-    .steps-grid {
-        grid-template-columns: 1fr;
-        gap: var(--spacing-lg);
+    .pasos-cuadrícula {
+        columnas de plantilla de cuadrícula: 1fr;
+        espacio: var(--spacing-lg);
     }
 
-    .step-actions {
-        flex-direction: column;
+    .acciones-de-paso {
+        flexión-dirección: columna;
     }
 
-    .action-btn,
+    .acción-btn,
     .complete-btn {
-        width: 100%;
+        ancho: 100%;
     }
 
-    .container {
-        padding: 0 var(--spacing-sm);
+    .contenedor {
+        relleno: 0 var(--spacing-sm);
     }
 }
 
-/* Animaciones */
+/*Animaciones*/
 @keyframes fadeInUp {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
+    de {
+        opacidad: 0;
+        transformar: translateY(30px);
     }
-    to {
-        opacity: 1;
-        transform: translateY(0);
+    a {
+        opacidad: 1;
+        transformar: translateY(0);
     }
 }
 
-@keyframes pulse {
+@keyframes pulso {
     0%, 100% {
-        transform: scale(1);
+        transformar: escala(1);
     }
     50% {
-        transform: scale(1.05);
+        transformar: escala(1.05);
     }
 }
 
-.step-card {
-    animation: fadeInUp var(--transition-slow) ease-out;
+.tarjeta-de-paso {
+    animación: fadeInUp var(--transition-slow) salida gradual;
 }
 
 .step-card.completed .step-number {
-    animation: pulse 1s ease-in-out;
+    animación: pulso 1s entrada-salida suave;
 }
 
 /* Efectos especiales */
-.celebration-effect {
-    position: relative;
-    overflow: hidden;
+.efecto-de-celebración {
+    posición: relativa;
+    desbordamiento: oculto;
 }
 
-.celebration-effect::after {
-    content: '🎉';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2rem;
-    animation: celebration 1s ease-out;
-    pointer-events: none;
+.efecto-de-celebración::después {
+    contenido: 'ðŸŽ‰';
+    posición: absoluta;
+    parte superior: 50%;
+    izquierda: 50%;
+    transformar: traducir(-50%, -50%);
+    tamaño de fuente: 2rem;
+    animación: celebración 1s salida fácil;
+    eventos de puntero: ninguno;
 }
 
-@keyframes celebration {
+@keyframes celebración {
     0% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(0);
+        opacidad: 0;
+        transformar: traducir(-50%, -50%) escala(0);
     }
     50% {
-        opacity: 1;
-        transform: translate(-50%, -50%) scale(1.2);
+        opacidad: 1;
+        transformar: traducir(-50%, -50%) escala(1.2);
     }
     100% {
-        opacity: 0;
-        transform: translate(-50%, -50%) scale(1);
+        opacidad: 0;
+        transformar: traducir(-50%, -50%) escala(1);
     }
 }
